@@ -15,17 +15,16 @@
 
 <!-- 
 
-<meta name="description" content="问题我在使用qml代码进行文件保存过程中发现当文件出现# &#x2F; ?  [ ] @ ! $ &amp; ‘ ( ) * + , ; &#x3D; 时保存后的文件名均显示%23等符号。 原因qml中文件保存后存储的路径时url类型，而以上字符对于url来说属于特殊字符，会进行编码处理。 解决方法decodeURIComponent()函数将URL编码的字符串转换回其正常形式 参考链接链接：https:&#x2F;&#x2F;www.">
+<meta name="description" content="问题c++中数组初始化默认值问题1、未初始化的全局数组为0；2、未初始化的局部数组为随机值；3、初始化部分的全局数组与局部数组，初始化部分为初始化值，未初始化部分都为0；（不管全集还是局部） 头文件搜索问题首先 #include&lt;&gt; 和 #include”” 只是最先搜索的路经不一样。#include&lt;&gt;  :表示只从从标准库文件目录下搜索，对于标准库文件搜索效率快。#in">
 <meta property="og:type" content="article">
-<meta property="og:title" content="qml中文件保存的名称出错">
-<meta property="og:url" content="http://yoursite.com/2020/05/20/qml-url-question/index.html">
+<meta property="og:title" content="c++ detail">
+<meta property="og:url" content="http://yoursite.com/2020/06/25/c-detail/index.html">
 <meta property="og:site_name" content="谈梦想">
-<meta property="og:description" content="问题我在使用qml代码进行文件保存过程中发现当文件出现# &#x2F; ?  [ ] @ ! $ &amp; ‘ ( ) * + , ; &#x3D; 时保存后的文件名均显示%23等符号。 原因qml中文件保存后存储的路径时url类型，而以上字符对于url来说属于特殊字符，会进行编码处理。 解决方法decodeURIComponent()函数将URL编码的字符串转换回其正常形式 参考链接链接：https:&#x2F;&#x2F;www.">
+<meta property="og:description" content="问题c++中数组初始化默认值问题1、未初始化的全局数组为0；2、未初始化的局部数组为随机值；3、初始化部分的全局数组与局部数组，初始化部分为初始化值，未初始化部分都为0；（不管全集还是局部） 头文件搜索问题首先 #include&lt;&gt; 和 #include”” 只是最先搜索的路经不一样。#include&lt;&gt;  :表示只从从标准库文件目录下搜索，对于标准库文件搜索效率快。#in">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-05-20T11:04:14.000Z">
-<meta property="article:modified_time" content="2020-05-20T11:27:57.627Z">
+<meta property="article:published_time" content="2020-06-25T08:02:19.000Z">
+<meta property="article:modified_time" content="2020-07-06T03:23:27.324Z">
 <meta property="article:author" content="专注小钱钱">
-<meta property="article:tag" content="QML">
 <meta name="twitter:card" content="summary">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
@@ -60,7 +59,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>qml中文件保存的名称出错 | 谈梦想</title>
+<title>c++ detail | 谈梦想</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -545,11 +544,11 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
                     <div class="body-wrap">
-                        <article id="post-qml-url-question" class="article article-type-post" itemscope itemprop="blogPost">
+                        <article id="a-c-detail" class="article article-type-a" itemscope itemprop="blogPost">
     
         <div class="article-meta">
-            <a href="/2020/05/20/qml-url-question/" class="article-date">
-      <time datetime="2020-05-20T11:04:14.000Z" itemprop="datePublished">2020-05-20</time>
+            <a href="/2020/06/25/c-detail/" class="article-date">
+      <time datetime="2020-06-25T08:02:19.000Z" itemprop="datePublished">2020-06-25</time>
 </a>
 
 
@@ -564,7 +563,7 @@
                                 
   
     <h1 class="article-title" itemprop="name">
-      qml中文件保存的名称出错
+      c++ detail
     </h1>
   
 
@@ -574,10 +573,6 @@
                                     
 
                                         
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QML/" rel="tag">QML</a></li></ul>
-    </div>
-
                                             <div class="clearfix"></div>
                                 </div>
                                 
@@ -585,10 +580,11 @@
                                         <div class="article-entry" itemprop="articleBody">
                                             
                                                                         
-                                                                                    <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>我在使用qml代码进行文件保存过程中发现当文件出现# / ?  [ ] @ ! $ &amp; ‘ ( ) * + , ; = 时保存后的文件名均显示%23等符号。</p>
-<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>qml中文件保存后存储的路径时url类型，而以上字符对于url来说属于特殊字符，会进行编码处理。</p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>decodeURIComponent()函数将URL编码的字符串转换回其正常形式</p>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p>链接：<a href="https://www.urlencoder.io/" target="_blank" rel="noopener">https://www.urlencoder.io/</a></p>
+                                                                                    <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>c++中数组初始化默认值问题<br>1、未初始化的全局数组为0；<br>2、未初始化的局部数组为随机值；<br>3、初始化部分的全局数组与局部数组，初始化部分为初始化值，未初始化部分都为0；（不管全集还是局部）</p>
+<p>头文件搜索问题<br>首先 #include&lt;&gt; 和 #include”” 只是最先搜索的路经不一样。<br>#include&lt;&gt;  :表示只从从标准库文件目录下搜索，对于标准库文件搜索效率快。<br>#include””    :表示首先从用户工作目录下开始搜索，对于自定义文件搜索比较快，然后搜索整个磁盘。</p>
+<p>sizeof方法的使用<br>sizeof对数组就是数组长度*数据类型长度<br>sizeof对指针就是int型长度<br>sizeof对数据类型自然是数据类型长度<br>sizeof对结构体需要考虑结构的字节对齐<br>sizeof（类）计算的是类中存在栈中的变量的大小<br>使用sizeof计算类的大小<br>类中虚函数占用一个地址位宽(4或8字节),且不论有多少个虚函数一共只占这么多<br>类与结构一样,都有字节对齐的问题<br>类中普通的函数不占用类的大小</p>
+<p>面向对象有三种特性：<br>封装、继承、多态<br>其中多态性有两种，一种是依靠 函数重载 实现的 静态绑定 ，一种是依靠 虚函数 实现的 动态绑定。</p>
+<p>一、 Objective-C 中 #import 和 #include 的区别<br>预编译指令<br>Objective-C：#import<br>C，C++：#include<br>#import由gcc编译器支持<br>在 Objective-C 中，#import 被当成 #include 指令的改良版本来使用。除此之外，#import 确定一个文件只能被导入一次，这使你在递归包含中不会出现问题。<br>使用哪一个还是由你来决定。一般来说，在导入 Objective-C 头文件的时候使用 #import，包含 C 头文件时使用 #include。<br>#import比起#include的好处就是不会引起交叉编译</p>
 
                                                                                         
                                         </div>
@@ -597,13 +593,13 @@
             
                 
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2020/05/20/qml-url-question/">qml中文件保存的名称出错</a></p>
+        <p><span>本文标题:</span><a href="/2020/06/25/c-detail/">c++ detail</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">专注小钱钱</a></p>
-        <p><span>发布时间:</span>2020-05-20, 19:04:14</p>
-        <p><span>最后更新:</span>2020-05-20, 19:27:57</p>
+        <p><span>发布时间:</span>2020-06-25, 16:02:19</p>
+        <p><span>最后更新:</span>2020-07-06, 11:23:27</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2020/05/20/qml-url-question/" title="qml中文件保存的名称出错">http://yoursite.com/2020/05/20/qml-url-question/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2020/05/20/qml-url-question/　　作者: 专注小钱钱" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/06/25/c-detail/" title="c++ detail">http://yoursite.com/2020/06/25/c-detail/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2020/06/25/c-detail/　　作者: 专注小钱钱" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -615,16 +611,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2020/05/30/sort/">
-                    十大排序算法
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2020/05/16/Yilla-change/">
-                    开始对Hexo博客进行定制
+                <a href="/2020/05/30/sort/">
+                    十大排序算法
                 </a>
             </div>
         
@@ -636,7 +626,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题"><span class="toc-number">1.</span> <span class="toc-text">问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原因"><span class="toc-number">2.</span> <span class="toc-text">原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方法"><span class="toc-number">3.</span> <span class="toc-text">解决方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接"><span class="toc-number">4.</span> <span class="toc-text">参考链接</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题"><span class="toc-number">1.</span> <span class="toc-text">问题</span></a></li></ol>
         
     </div>
     <style>
@@ -672,7 +662,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"qml中文件保存的名称出错　| 谈梦想　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"c++ detail　| 谈梦想　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -692,15 +682,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2020/05/30/sort/" title="上一篇: 十大排序算法">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2020/05/16/Yilla-change/" title="下一篇: 开始对Hexo博客进行定制">
+            <a href="/2020/05/30/sort/" title="下一篇: 十大排序算法">
                 <i class="fa fa-angle-right"></i>
             </a>
         
