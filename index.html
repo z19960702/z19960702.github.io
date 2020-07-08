@@ -47,11 +47,6 @@
 
 
 
-    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
-    <link href="//cdn.bootcss.com/pace/1.0.2/themes/white-gray/pace-theme-minimal.css" rel="stylesheet">
-
-
-
 <link rel="stylesheet" href="/css/style.css">
 
 
@@ -78,7 +73,7 @@
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: 
+        search: false
     }
 </script>
 
@@ -94,145 +89,123 @@
 
 
 
-<!--
-
--->
-
+<!--引入评论-->
+<!--Valine 的核心代码库:-->
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <meta name="generator" content="Hexo 4.2.1"></head>
-
-    <body>
-        <div id="container">
-            <div class="left-col">
-                <div class="overlay"></div>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
 <div class="intrude-less">
     <header id="header" class="inner">
         <a href="/" class="profilepic">
             <img src="/img/image.jpg" class="animated zoomIn">
         </a>
         <hgroup>
-            <h1 class="header-author">
-                <a href="/">
-                    专注小钱钱
-                </a>
-            </h1>
+          <h1 class="header-author"><a href="/">专注小钱钱</a></h1>
         </hgroup>
 
         
-            <p class="header-subtitle">
-                变秃了也变强了
-            </p>
-            
+        <p class="header-subtitle">变秃了也变强了</p>
+        
 
-                
+        
 
 
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
                         
-                            <div id="switch-btn" class="switch-btn">
-                                <div class="icon">
-                                    <div class="icon-ctn">
-                                        <div class="icon-wrap icon-house" data-idx="0">
-                                            <div class="birdhouse"></div>
-                                            <div class="birdhouse_holes"></div>
-                                        </div>
-                                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
-                                            <div class="ribbon"></div>
-                                        </div>
-                                        
-                                            <div class="icon-wrap icon-link hide" data-idx="2">
-                                                <div class="loopback_l"></div>
-                                                <div class="loopback_r"></div>
-                                            </div>
-                                            
-                                                
-                                                    <div class="icon-wrap icon-me hide" data-idx="3">
-                                                        <div class="user"></div>
-                                                        <div class="shoulder"></div>
-                                                    </div>
-                                                    
-                                    </div>
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <div class="switch-part">
+                    <!-- 子菜单 -->
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                        </ul>
+                    </nav>
+                    
+                </div>
+                <!-- 标签云 -->
+                
+                    <div class="switch-part" id="js-tagcloud">
+                        <!-- 标签云 -->
 
-                                </div>
-                                <div class="tips-box hide">
-                                    <div class="tips-arrow"></div>
-                                    <ul class="tips-inner">
-                                        <li>
-                                            菜单
-                                        </li>
-                                        <li>
-                                            标签
-                                        </li>
-                                        
-                                            <li>
-                                                友情链接
-                                            </li>
-                                            
-                                                
-                                                    <li>
-                                                        关于我
-                                                    </li>
-                                                    
-                                    </ul>
-                                </div>
-                            </div>
-                            
-
-                                <div id="switch-area" class="switch-area">
-                                    <div class="switch-wrap">
-                                        <div class="switch-part">
-                                            <!-- 子菜单 -->
-                                            <nav class="header-menu">
-                                                <ul>
-                                                    
-                                                        <li>
-                                                            <a href="/">
-                                                                主页
-                                                            </a>
-                                                        </li>
-                                                        
-                                                        <li>
-                                                            <a href="/archives/">
-                                                                所有文章
-                                                            </a>
-                                                        </li>
-                                                        
-                                                </ul>
-                                            </nav>
-
-                                        </div>
-                                        <!-- 标签云 -->
-                                        
-                                            <div class="switch-part" id="js-tagcloud">
-                                                
     <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
     <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
     <div class="widget-wrap">
         <div id="myCanvasContainer" class="widget tagcloud">
             <canvas width="250" height="200" id="resCanvas" style="width:100%">
-          <a href="/tags/QML/" style="font-size: 10px;">QML</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a>
+          <a href="/tags/QML/" style="font-size: 10px;">QML</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/c/" style="font-size: 10px;">c++</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a>
         </canvas>
         </div>
     </div>
     
-                                            </div>
-                                            
-                                                <!-- 子导航栏 -->
-                                                
-                                                    <div class="switch-part switch-part3">
-                                                        <nav class="header-nav">
-                                                            <ul class="social">
-                                                                
-                                                                    <a class="fa Email" href="mailto:18120491@bjtu.edu.cn" title="Email"></a>
-                                                                    
-                                                                    <a class="fa github" href="https://github.com/z19960702" target="_blank" rel="noopener" title="github"></a>
-                                                                    
-                                                                    <a class="fa bilibili" href="https://www.bilibili.com/" target="_blank" rel="noopener" title="bilibili"></a>
-                                                                    
-                                                            </ul>
-                                                        </nav>
-                                                    </div>
-                                                    
-                                                        <div class="switch-part switch-part4">
-                                                            <!-- 时钟粒子特效 -->
+                    </div>
+                
+                <!-- 子导航栏 -->
+                
+                <div class="switch-part switch-part3">
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:18120491@bjtu.edu.cn" title="Email"></a>
+                            
+                                <a class="fa github" href="https://github.com/z19960702" target="_blank" rel="noopener" title="github"></a>
+                            
+                                <a class="fa bilibili" href="https://www.bilibili.com/" target="_blank" rel="noopener" title="bilibili"></a>
+                            
+                                <a class="fa 知乎" href="/zhihu" title="知乎"></a>
+                            
+                        </ul>
+                    </nav>
+                </div>
+                
+                <div class="switch-part switch-part4">
+                    <!-- 时钟粒子特效 -->
 
 <div style="">
     <canvas id="canvas" style="width:60%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas>
@@ -498,14 +471,15 @@
 
     })();
 </script>
-                                                        </div>
-                                    </div>
-                                </div>
-    </header>
-</div>
+                </div> 
             </div>
-            <div class="mid-col">
-                <nav id="mobile-nav">
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <!-- 移动端将左侧栏放在页面顶部显示 -->
+<nav id="mobile-nav">
       <div class="overlay">
           <div class="slider-trigger"></div>
           <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">专注小钱钱</a></h1>
@@ -540,332 +514,428 @@
                             
                                 <a class="fa bilibili" target="_blank" href="https://www.bilibili.com/" title="bilibili"></a>
                             
+                                <a class="fa 知乎" target="_blank" href="/zhihu" title="知乎"></a>
+                            
                         </ul>
             </nav>
         </header>                
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-                    <div class="body-wrap">
-                        
+      <div class="body-wrap">
   
     <article id="a-c-detail" class="article article-type-a" itemscope itemprop="blogPost">
-    
-        <div class="article-meta">
-            <a href="/2020/06/25/c-detail/" class="article-date">
+  <!-- 右上侧时间显示   -->
+  
+      <div class="article-meta">
+        <a href="/2020/06/25/c-detail/" class="article-date">
       <time datetime="2020-06-25T08:02:19.000Z" itemprop="datePublished">2020-06-25</time>
 </a>
 
+ 
+    <a href="/2020/06/25/c-detail/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+    </a>
 
-        </div>
-        
-            <div class="article-inner">
-                
-                    <input type="hidden" class="isFancy" />
-                    
-                        
-                            <header class="article-header">
-                                
+      </div>
+    
+    <!-- 文章内容 -->
+    <div class="article-inner">
+      
+        <input type="hidden" class="isFancy" />
+      
+      
+        <header class="article-header">
+          
   
     <h1 itemprop="name">
       <a class="article-title" href="/2020/06/25/c-detail/">c++ detail</a>
     </h1>
   
 
-                            </header>
-                            
-                                    
-                                        <div class="article-entry" itemprop="articleBody">
-                                            
-                                                                        
-                                                                                    <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>c++中数组初始化默认值问题<br>1、未初始化的全局数组为0；<br>2、未初始化的局部数组为随机值；<br>3、初始化部分的全局数组与局部数组，初始化部分为初始化值，未初始化部分都为0；（不管全集还是局部）</p>
-<p>头文件搜索问题<br>首先 #include&lt;&gt; 和 #include”” 只是最先搜索的路经不一样。<br>#include&lt;&gt;  :表示只从从标准库文件目录下搜索，对于标准库文件搜索效率快。<br>#include””    :表示首先从用户工作目录下开始搜索，对于自定义文件搜索比较快，然后搜索整个磁盘。</p>
-<p>sizeof方法的使用<br>sizeof对数组就是数组长度*数据类型长度<br>sizeof对指针就是int型长度<br>sizeof对数据类型自然是数据类型长度<br>sizeof对结构体需要考虑结构的字节对齐<br>sizeof（类）计算的是类中存在栈中的变量的大小<br>使用sizeof计算类的大小<br>类中虚函数占用一个地址位宽(4或8字节),且不论有多少个虚函数一共只占这么多<br>类与结构一样,都有字节对齐的问题<br>类中普通的函数不占用类的大小</p>
-<p>面向对象有三种特性：<br>封装、继承、多态<br>其中多态性有两种，一种是依靠 函数重载 实现的 静态绑定 ，一种是依靠 虚函数 实现的 动态绑定。</p>
-<p>一、 Objective-C 中 #import 和 #include 的区别<br>预编译指令<br>Objective-C：#import<br>C，C++：#include<br>#import由gcc编译器支持<br>在 Objective-C 中，#import 被当成 #include 指令的改良版本来使用。除此之外，#import 确定一个文件只能被导入一次，这使你在递归包含中不会出现问题。<br>使用哪一个还是由你来决定。一般来说，在导入 Objective-C 头文件的时候使用 #import，包含 C 头文件时使用 #include。<br>#import比起#include的好处就是不会引起交叉编译</p>
-
-                                                                                        
-                                        </div>
-                                        
-                                            <div class="article-info article-info-index">
-                                                
-                                                        
-
-                                                            
-                                                                
-                                                                        <div class="clearfix"></div>
-                                            </div>
-                                            
-            </div>
+        </header>
+        
+      
+      <div class="article-entry" itemprop="articleBody">
+        
             
-</article>
+                <p>对c++知识点的遗漏部分</p>
+            
+        
+      </div>
+      
+      <div class="article-info article-info-index">
+        
+        
 
+        <!-- 文章标签 -->
 
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/" rel="tag">c++</a></li></ul>
+    </div>
+
+        
+          <p class="article-more-link">
+            <a href="/2020/06/25/c-detail/#more">more >></a>
+          </p>
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    </div>
     
+  </article>
+  
+  <!-- 左边目录显示 -->
 
-                
+  
+  
+  
+  
+  
+  <!-- 文章中左下角的导航栏 -->
 
-                                                            
-
-                                                                
+  
+  
+  <!-- 右下角三个按钮 -->
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+     
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
   
     <article id="post-sort" class="article article-type-post" itemscope itemprop="blogPost">
-    
-        <div class="article-meta">
-            <a href="/2020/05/30/sort/" class="article-date">
+  <!-- 右上侧时间显示   -->
+  
+      <div class="article-meta">
+        <a href="/2020/05/30/sort/" class="article-date">
       <time datetime="2020-05-30T06:16:54.000Z" itemprop="datePublished">2020-05-30</time>
 </a>
 
+ 
+    <a href="/2020/05/30/sort/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+    </a>
 
-        </div>
-        
-            <div class="article-inner">
-                
-                    <input type="hidden" class="isFancy" />
-                    
-                        
-                            <header class="article-header">
-                                
+      </div>
+    
+    <!-- 文章内容 -->
+    <div class="article-inner">
+      
+        <input type="hidden" class="isFancy" />
+      
+      
+        <header class="article-header">
+          
   
     <h1 itemprop="name">
       <a class="article-title" href="/2020/05/30/sort/">十大排序算法</a>
     </h1>
   
 
-                            </header>
-                            
-                                    
-                                        <div class="article-entry" itemprop="articleBody">
-                                            
-                                                
-                                                            <p>十大排序算法</p>
-                                                                
-                                                                    
-                                        </div>
-                                        
-                                            <div class="article-info article-info-index">
-                                                
-                                                        
+        </header>
+        
+      
+      <div class="article-entry" itemprop="articleBody">
+        
+            
+                <p>十大排序算法</p>
+            
+        
+      </div>
+      
+      <div class="article-info article-info-index">
+        
+        
 
-                                                            
+        <!-- 文章标签 -->
+
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
     </div>
 
-                                                                
-                                                                    <p class="article-more-link">
-                                                                        <a href="/2020/05/30/sort/#more">
-                                                                            more >></a>
-                                                                    </p>
-                                                                    
-                                                                        <div class="clearfix"></div>
-                                            </div>
-                                            
-            </div>
-            
-</article>
-
-
+        
+          <p class="article-more-link">
+            <a href="/2020/05/30/sort/#more">more >></a>
+          </p>
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    </div>
     
+  </article>
+  
+  <!-- 左边目录显示 -->
 
-                
+  
+  
+  
+  
+  
+  <!-- 文章中左下角的导航栏 -->
 
-                                                            
-
-                                                                
+  
+  
+  <!-- 右下角三个按钮 -->
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+     
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
   
     <article id="post-qml-url-question" class="article article-type-post" itemscope itemprop="blogPost">
-    
-        <div class="article-meta">
-            <a href="/2020/05/20/qml-url-question/" class="article-date">
+  <!-- 右上侧时间显示   -->
+  
+      <div class="article-meta">
+        <a href="/2020/05/20/qml-url-question/" class="article-date">
       <time datetime="2020-05-20T11:04:14.000Z" itemprop="datePublished">2020-05-20</time>
 </a>
 
+ 
+    <a href="/2020/05/20/qml-url-question/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+    </a>
 
-        </div>
-        
-            <div class="article-inner">
-                
-                    <input type="hidden" class="isFancy" />
-                    
-                        
-                            <header class="article-header">
-                                
+      </div>
+    
+    <!-- 文章内容 -->
+    <div class="article-inner">
+      
+        <input type="hidden" class="isFancy" />
+      
+      
+        <header class="article-header">
+          
   
     <h1 itemprop="name">
       <a class="article-title" href="/2020/05/20/qml-url-question/">qml中文件保存的名称出错</a>
     </h1>
   
 
-                            </header>
-                            
-                                    
-                                        <div class="article-entry" itemprop="articleBody">
-                                            
-                                                                        
-                                                                                    <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>我在使用qml代码进行文件保存过程中发现当文件出现# / ?  [ ] @ ! $ &amp; ‘ ( ) * + , ; = 时保存后的文件名均显示%23等符号。</p>
-<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>qml中文件保存后存储的路径时url类型，而以上字符对于url来说属于特殊字符，会进行编码处理。</p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>decodeURIComponent()函数将URL编码的字符串转换回其正常形式</p>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p>链接：<a href="https://www.urlencoder.io/" target="_blank" rel="noopener">https://www.urlencoder.io/</a></p>
+        </header>
+        
+      
+      <div class="article-entry" itemprop="articleBody">
+        
+            
+                <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>我在使用qml代码进行文件保存过程中发现当文件出现# / ?  [ ] @ ! $ &amp; ‘ ( ) * + , ; = 时保存后的文件名均显示%23等符号。</p>
+            
+        
+      </div>
+      
+      <div class="article-info article-info-index">
+        
+        
 
-                                                                                        
-                                        </div>
-                                        
-                                            <div class="article-info article-info-index">
-                                                
-                                                        
+        <!-- 文章标签 -->
 
-                                                            
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QML/" rel="tag">QML</a></li></ul>
     </div>
 
-                                                                
-                                                                        <div class="clearfix"></div>
-                                            </div>
-                                            
-            </div>
-            
-</article>
-
-
+        
+          <p class="article-more-link">
+            <a href="/2020/05/20/qml-url-question/#more">more >></a>
+          </p>
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    </div>
     
+  </article>
+  
+  <!-- 左边目录显示 -->
 
-                
+  
+  
+  
+  
+  
+  <!-- 文章中左下角的导航栏 -->
 
-                                                            
-
-                                                                
+  
+  
+  <!-- 右下角三个按钮 -->
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+     
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
   
     <article id="post-Yilla-change" class="article article-type-post" itemscope itemprop="blogPost">
-    
-        <div class="article-meta">
-            <a href="/2020/05/16/Yilla-change/" class="article-date">
+  <!-- 右上侧时间显示   -->
+  
+      <div class="article-meta">
+        <a href="/2020/05/16/Yilla-change/" class="article-date">
       <time datetime="2020-05-16T11:22:07.000Z" itemprop="datePublished">2020-05-16</time>
 </a>
 
+ 
+    <a href="/2020/05/16/Yilla-change/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+    </a>
 
-        </div>
-        
-            <div class="article-inner">
-                
-                    <input type="hidden" class="isFancy" />
-                    
-                        
-                            <header class="article-header">
-                                
+      </div>
+    
+    <!-- 文章内容 -->
+    <div class="article-inner">
+      
+        <input type="hidden" class="isFancy" />
+      
+      
+        <header class="article-header">
+          
   
     <h1 itemprop="name">
       <a class="article-title" href="/2020/05/16/Yilla-change/">开始对Hexo博客进行定制</a>
     </h1>
   
 
-                            </header>
-                            
-                                    
-                                        <div class="article-entry" itemprop="articleBody">
-                                            
-                                                                        
-                                                                                    <p>head+layout形成了整个网站的总体结构</p>
-<p>head为网站的头部，引入外链和调用脚本，layout是网站body，用来进行总体布局<br>left-col是左边导航栏<br>mid-col是中心内容部分</p>
-<p>footer是博客根部<br>after-footer是网站背景等叠加</p>
-<p>tab-title-change对网站标题进行切换</p>
-<p>scrolling-button右下角三个按钮</p>
-<p>mathjax数学公式渲染器</p>
-<p>网站统计用了三种方式：谷歌分析器、百度统计和不蒜子网站计数设置</p>
-<p>右边侧栏将绝对布局取消改为div竖列排布，在每个部分添加自定义的部分</p>
-
-                                                                                        
-                                        </div>
-                                        
-                                            <div class="article-info article-info-index">
-                                                
-                                                        
-
-                                                            
-                                                                
-                                                                        <div class="clearfix"></div>
-                                            </div>
-                                            
-            </div>
+        </header>
+        
+      
+      <div class="article-entry" itemprop="articleBody">
+        
             
-</article>
+                <p>对hexo中的yilla博客代码进行分析</p>
+            
+        
+      </div>
+      
+      <div class="article-info article-info-index">
+        
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/hexo/">hexo</a>
+    </div>
 
 
+        <!-- 文章标签 -->
+
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li></ul>
+    </div>
+
+        
+          <p class="article-more-link">
+            <a href="/2020/05/16/Yilla-change/#more">more >></a>
+          </p>
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    </div>
     
+  </article>
+  
+  <!-- 左边目录显示 -->
 
-                
+  
+  
+  
+  
+  
+  <!-- 文章中左下角的导航栏 -->
 
-                                                            
-
-                                                                
+  
+  
+  <!-- 右下角三个按钮 -->
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+     
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
   
     <article id="post-my-first-blog" class="article article-type-post" itemscope itemprop="blogPost">
-    
-        <div class="article-meta">
-            <a href="/2020/05/16/my-first-blog/" class="article-date">
+  <!-- 右上侧时间显示   -->
+  
+      <div class="article-meta">
+        <a href="/2020/05/16/my-first-blog/" class="article-date">
       <time datetime="2020-05-16T06:51:24.000Z" itemprop="datePublished">2020-05-16</time>
 </a>
 
+ 
+    <a href="/2020/05/16/my-first-blog/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+    </a>
 
-        </div>
-        
-            <div class="article-inner">
-                
-                    <input type="hidden" class="isFancy" />
-                    
-                        
-                            <header class="article-header">
-                                
+      </div>
+    
+    <!-- 文章内容 -->
+    <div class="article-inner">
+      
+        <input type="hidden" class="isFancy" />
+      
+      
+        <header class="article-header">
+          
   
     <h1 itemprop="name">
       <a class="article-title" href="/2020/05/16/my-first-blog/">学习创建博客</a>
     </h1>
   
 
-                            </header>
-                            
-                                    
-                                        <div class="article-entry" itemprop="articleBody">
-                                            
-                                                                        
-                                                                                    <p>根据hexo中的主题更改个性化的博客</p>
-<h2 id="两个config的不同"><a href="#两个config的不同" class="headerlink" title="两个config的不同"></a>两个config的不同</h2><p>站点配置文件： 用来设置博客的标题、作者等信息   路径位于/hexo下<br>主题配置文件： 用来设置博客的内容信息</p>
-<h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><p>设置博客作者标题是使用中文，虽然将编码改为utf-8编码（language： zh-CN），但由于用记事本打开的.yml文件，导致显示时仍为乱码，使用vscode打开该文件，重新编辑即可。</p>
+        </header>
+        
+      
+      <div class="article-entry" itemprop="articleBody">
+        
+            
+                <p>根据hexo中的主题更改个性化的博客</p>
+            
+        
+      </div>
+      
+      <div class="article-info article-info-index">
+        
+        
 
-                                                                                        
-                                        </div>
-                                        
-                                            <div class="article-info article-info-index">
-                                                
-                                                        
+        <!-- 文章标签 -->
 
-                                                            
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/" rel="tag">blog</a></li></ul>
     </div>
 
-                                                                
-                                                                        <div class="clearfix"></div>
-                                            </div>
-                                            
-            </div>
-            
-</article>
-
-
+        
+          <p class="article-more-link">
+            <a href="/2020/05/16/my-first-blog/#more">more >></a>
+          </p>
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    </div>
     
+  </article>
+  
+  <!-- 左边目录显示 -->
 
-                
-
-                                                            
-
-                                                                
   
   
+  
+  
+  
+  <!-- 文章中左下角的导航栏 -->
 
-                    </div>
-                    <!-- 博客根部 -->
+  
+  
+  <!-- 右下角三个按钮 -->
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+     
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+  
+  
+</div>
+      <!-- 博客根部 -->
 <footer id="footer">
     <div class="outer">
         <div id="footer-info">
@@ -875,7 +945,7 @@
                     专注小钱钱
             </div>
             <div class="footer-right">
-                <i class="fa fa-heart animated infinite pulse"></i> Study from<a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a> Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a>
+                <i class="fa fa-heart animated infinite pulse"></i> Study from <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a> Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a>
             </div>
         </div>
         
@@ -900,8 +970,8 @@
             
     </div>
 </footer>
-            </div>
-            
+    </div>
+    
     
 <script src="/js/GithubRepoWidget.js"></script>
 
@@ -933,22 +1003,16 @@
     
                 
                     
-                        
-                            <!-- 数学公式渲染器 -->
+                        <!-- 数学公式渲染器 -->
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true, skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] } }); MathJax.Hub.Queue(function() { var all = MathJax.Hub.getAllJax(), i; for(i=0; i
     < all.length; i +=1 ) { all[i].SourceElement().parentNode.className +=' has-jax' ; } }); </script>
 
         <script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
         </script>
+                            
                                 
-                                    <!-- 右下角三个按钮 -->
-<div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
-</div>
-                                        <script>
+                                    <script>
     // Open in New Window
     
     var oOpenInNew = {
@@ -977,7 +1041,6 @@
     }
     
 </script>
-        </div>
-    </body>
-
-    </html>
+  </div>
+</body>
+</html>

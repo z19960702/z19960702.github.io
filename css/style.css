@@ -868,12 +868,11 @@ a {
   -moz-background-size: 103%;
   background-size: 103%;
 }
-#header .header-nav .social .GitHub {
-  background: url("//cdn.bootcss.com/logos/0.2.0/github-octocat.svg") no-repeat #fff;
-  -webkit-background-size: 90%;
-  -moz-background-size: 90%;
-  background-size: 90%;
-  background-position: 50% 100%;
+#header .header-nav .social .github {
+  background: url("/img/github.png") center no-repeat #fff;
+  -webkit-background-size: 110%;
+  -moz-background-size: 110%;
+  background-size: 110%;
 }
 #header .header-nav .social .CodePen {
   background: url("//cdn.bootcss.com/logos/0.2.0/codepen-icon.svg") no-repeat #000;
@@ -978,7 +977,7 @@ a {
 #header .header-nav .social ._500px::before {
   content: '\f26e';
 }
-.duoshuo {
+#comments {
   padding: 0 40px;
 }
 #disqus_thread {
@@ -1718,11 +1717,12 @@ li:hover {
   overflow: auto;
 }
 #toc {
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.65em;
 }
 #toc .toc-title {
   font-weight: bold;
+  font-size: 1.2rem;
   color: #808080;
 }
 #toc .toc-title.clickable {
@@ -2772,43 +2772,43 @@ pre .javascript .function {
   font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei" "Lucida Grande", Verdana, "Helvetica Neue", Arial;
 }
 .tagcloud a.color0 {
-  background: #88acdb;
+  background-color: #88acdb;
 }
 .tagcloud a.color0::before {
   border-right-color: #88acdb;
 }
 .tagcloud a.color1 {
-  background: #ffa07a;
+  background-color: #ffa07a;
 }
 .tagcloud a.color1::before {
   border-right-color: #ffa07a;
 }
 .tagcloud a.color2 {
-  background: #f08080;
+  background-color: #f08080;
 }
 .tagcloud a.color2::before {
   border-right-color: #f08080;
 }
 .tagcloud a.color3 {
-  background: #76becc;
+  background-color: #76becc;
 }
 .tagcloud a.color3::before {
   border-right-color: #76becc;
 }
 .tagcloud a.color4 {
-  background: #918597;
+  background-color: #918597;
 }
 .tagcloud a.color4::before {
   border-right-color: #918597;
 }
 .tagcloud a.color5 {
-  background: #6fc0e4;
+  background-color: #6fc0e4;
 }
 .tagcloud a.color5::before {
   border-right-color: #6fc0e4;
 }
 .tagcloud a.color6 {
-  background: #bc8f8f;
+  background-color: #bc8f8f;
 }
 .tagcloud a.color6::before {
   border-right-color: #bc8f8f;
