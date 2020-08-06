@@ -15,17 +15,19 @@
 
 <!-- 
 
-<meta name="description" content="记录学习之路">
+<meta name="description" content="对Linux进行学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux">
 <meta property="og:url" content="http://yoursite.com/2020/08/06/Linux/index.html">
 <meta property="og:site_name" content="谈梦想">
-<meta property="og:description" content="记录学习之路">
+<meta property="og:description" content="对Linux进行学习">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2020/08/06/Linux/Linux%E9%A1%B6%E5%B1%82%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.png">
 <meta property="article:published_time" content="2020-08-06T03:27:20.000Z">
-<meta property="article:modified_time" content="2020-08-06T03:27:20.503Z">
+<meta property="article:modified_time" content="2020-08-06T10:34:18.849Z">
 <meta property="article:author" content="专注小钱钱">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/08/06/Linux/Linux%E9%A1%B6%E5%B1%82%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -558,7 +560,19 @@
       <div class="article-entry" itemprop="articleBody">
         
             
-          
+          <p>对Linux进行学习</p>
+<a id="more"></a>
+<p>shell是唯一通过命令行接口（CLI）或图形用户接口（GUI）解释用户命令的用户接口</p>
+
+
+<p>Linux为命令添加参数通常可以用以下两种方式之一：一个破折号后跟一个字母，或者两个破折号来引用该参数更为冗长的形式（如ls–human-readable会得出与ls-h完全相同的输出）</p>
+<h1 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h1><img src="/2020/08/06/Linux/Linux%E9%A1%B6%E5%B1%82%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.png" class title="顶层目录结构">
+<p>ls  当前目录下，可以列出文件及子目录的名字<br>参数： -l 列出文件的权限、所有者、组文件大小以及时间戳等信息<br>-h 以用户可读的格式——KB（千字节）、MB（兆字节）以及GB（千兆字节）来显示文件的大小<br>-R 显示子目录及它们包含的文件与子目录<br>pwd 显示当前路径<br>cd 通过相对路径或绝对路径访问对应的文件夹<br>file 查看文件类型</p>
+<p>touch 快速地创建一个空文件<br>mkdir 快速地创建一个空文件夹<br>rm 删除一个文件 -r 递归删除 -f 强制删除<br>rmdir 删除一个文件夹<br>cp 将对象复制至指定目录（可以识别复制位置是否为文件夹，若没有则进行创建）<br>mv 将对象移动至指定目录 要移动或复制多个文件，并且想要避免逐个输入所有的文件名，通常你可以使用通配符（*）来进行全局操作（正则表达）</p>
+<h1 id="命令使用"><a href="#命令使用" class="headerlink" title="命令使用"></a>命令使用</h1><p>type 说明如何解释命令名<br>which 显示会执行哪些可执行程序<br>man 查看命令对应的文档 按下/键可以切换至屏幕底部的文字输入区，在这里可以输入要搜索的内容<br>apropos 显示一系列合适的命令<br>info 查看命令的info条目<br>whatis 查看一条命令的简述<br>通过使用分号来分隔多条命令，就可以将多条命令输入在一行中。command1;command2;command3……</p>
+<h1 id="I-O输出"><a href="#I-O输出" class="headerlink" title="I/O输出"></a>I/O输出</h1><p>I/O重定向功能可以重新定义标准输出位置。使用重定向操作符&gt;，后面接文件名，就可以把标准输出重定向到另一个文件中，而不是显示在屏幕上，重定向符&gt;&gt;将使得输出内容添加在文件的尾部，重定向符2&gt;将标准错误进行重定向，重定向符&amp;&gt;把标准输出和标准错误都进行重定向<br>| 可以把一个命令的标准输出传送到另一个命令的标准输入中<br>cat 将文件内容打印到输出<br>less 显示文件内容，可以上下翻页进行查看 G跳到文本文件尾 g跳到文件头 /进行查找 n查找下一个<br>sort 对文本行排序<br>uniq 报告或删除文件中重复的行<br>wc 打印文件中的换行符、字和字节的个数<br>grep 打印匹配行（过滤器）<br>head 输出文件的第一部分内容<br>tail 输出文件的最后一部分内容<br>tee 读取标准输入的数据，并将其内容输出到标准输出和文件中</p>
+<p>journalctl 访问所有的系统日志<br> 管道命令</p>
+
         
       </div>
       
@@ -602,7 +616,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#文件系统"><span class="toc-number">1.</span> <span class="toc-text">文件系统</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#命令使用"><span class="toc-number">2.</span> <span class="toc-text">命令使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#I-O输出"><span class="toc-number">3.</span> <span class="toc-text">I&#x2F;O输出</span></a></li></ol>
         
     </div>
     <style>
