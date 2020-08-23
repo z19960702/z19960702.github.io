@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="专注小钱钱" />
+
+<!-- 
+
+<meta name="description" content="对c++中STL容器知识点进行汇总">
+<meta property="og:type" content="article">
+<meta property="og:title" content="STL容器总结">
+<meta property="og:url" content="http://yoursite.com/2020/08/11/STL%E5%AE%B9%E5%99%A8%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="谈梦想">
+<meta property="og:description" content="对c++中STL容器知识点进行汇总">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2020/08/11/STL%E5%AE%B9%E5%99%A8%E6%80%BB%E7%BB%93/%E5%85%AD%E5%A4%A7%E7%BB%84%E4%BB%B6%E7%9A%84%E5%85%B3%E7%B3%BB.png">
+<meta property="article:published_time" content="2020-08-11T07:00:44.000Z">
+<meta property="article:modified_time" content="2020-08-14T06:25:40.000Z">
+<meta property="article:author" content="专注小钱钱">
+<meta property="article:tag" content="C++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/08/11/STL%E5%AE%B9%E5%99%A8%E6%80%BB%E7%BB%93/%E5%85%AD%E5%A4%A7%E7%BB%84%E4%BB%B6%E7%9A%84%E5%85%B3%E7%B3%BB.png">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="谈梦想" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+ -->
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+ 
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>STL容器总结 | 谈梦想</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: false
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+<!--引入评论-->
+<!--Valine 的核心代码库:-->
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/image.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">专注小钱钱</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">变秃了也变强了</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <div class="switch-part">
+                    <!-- 子菜单 -->
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                        </ul>
+                    </nav>
+                    
+                </div>
+                <!-- 标签云 -->
+                
+                    <div class="switch-part" id="js-tagcloud">
+                        <!-- 标签云 -->
+
+    <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+    <div class="widget-wrap">
+        <div id="myCanvasContainer" class="widget tagcloud">
+            <canvas width="250" height="200" id="resCanvas" style="width:100%">
+          <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/QML/" style="font-size: 10px;">QML</a> <a href="/tags/blog/" style="font-size: 15px;">blog</a> <a href="/tags/c/" style="font-size: 10px;">c++</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/%E6%80%81%E5%8A%BF%E6%84%9F%E7%9F%A5/" style="font-size: 10px;">态势感知</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">机器学习</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/" style="font-size: 20px;">网络协议</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 15px;">面试</a>
+        </canvas>
+        </div>
+    </div>
+    
+                    </div>
+                
+                <!-- 子导航栏 -->
+                
+                <div class="switch-part switch-part3">
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:18120491@bjtu.edu.cn" title="Email"></a>
+                            
+                                <a class="fa github" href="https://github.com/z19960702" target="_blank" rel="noopener" title="github"></a>
+                            
+                                <a class="fa bilibili" href="https://www.bilibili.com/" target="_blank" rel="noopener" title="bilibili"></a>
+                            
+                                <a class="fa 知乎" href="/zhihu" title="知乎"></a>
+                            
+                        </ul>
+                    </nav>
+                </div>
+                
+                <div class="switch-part switch-part4">
+                    <!-- 时钟粒子特效 -->
+
+<div style="">
+    <canvas id="canvas" style="width:60%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas>
+</div>
+<script>
+    (function() {
+
+        var digit = [
+            [
+                [0, 0, 1, 1, 1, 0, 0],
+                [0, 1, 1, 0, 1, 1, 0],
+                [1, 1, 0, 0, 0, 1, 1],
+                [1, 1, 0, 0, 0, 1, 1],
+                [1, 1, 0, 0, 0, 1, 1],
+                [1, 1, 0, 0, 0, 1, 1],
+                [1, 1, 0, 0, 0, 1, 1],
+                [1, 1, 0, 0, 0, 1, 1],
+                [0, 1, 1, 0, 1, 1, 0],
+                [0, 0, 1, 1, 1, 0, 0]
+            ], //0
+            [
+                [0, 0, 0, 1, 1, 0, 0],
+                [0, 1, 1, 1, 1, 0, 0],
+                [0, 0, 0, 1, 1, 0, 0],
+                [0, 0, 0, 1, 1, 0, 0],
+                [0, 0, 0, 1, 1, 0, 0],
+                [0, 0, 0, 1, 1, 0, 0],
+                [0, 0, 0, 1, 1, 0, 0],
+                [0, 0, 0, 1, 1, 0, 0],
+                [0, 0, 0, 1, 1, 0, 0],
+                [1, 1, 1, 1, 1, 1, 1]
+            ], //1
+            [
+                [0, 1, 1, 1, 1, 1, 0],
+                [1, 1, 0, 0, 0, 1, 1],
+                [0, 0, 0, 0, 0, 1, 1],
+                [0, 0, 0, 0, 1, 1, 0],
+                [0, 0, 0, 1, 1, 0, 0],
+                [0, 0, 1, 1, 0, 0, 0],
+                [0, 1, 1, 0, 0, 0, 0],
+                [1, 1, 0, 0, 0, 0, 0],
+                [1, 1, 0, 0, 0, 1, 1],
+                [1, 1, 1, 1, 1, 1, 1]
+            ], //2
+            [
+                [1, 1, 1, 1, 1, 1, 1],
+                [0, 0, 0, 0, 0, 1, 1],
+                [0, 0, 0, 0, 1, 1, 0],
+                [0, 0, 0, 1, 1, 0, 0],
+                [0, 0, 1, 1, 1, 0, 0],
+                [0, 0, 0, 0, 1, 1, 0],
+                [0, 0, 0, 0, 0, 1, 1],
+                [0, 0, 0, 0, 0, 1, 1],
+                [1, 1, 0, 0, 0, 1, 1],
+                [0, 1, 1, 1, 1, 1, 0]
+            ], //3
+            [
+                [0, 0, 0, 0, 1, 1, 0],
+                [0, 0, 0, 1, 1, 1, 0],
+                [0, 0, 1, 1, 1, 1, 0],
+                [0, 1, 1, 0, 1, 1, 0],
+                [1, 1, 0, 0, 1, 1, 0],
+                [1, 1, 1, 1, 1, 1, 1],
+                [0, 0, 0, 0, 1, 1, 0],
+                [0, 0, 0, 0, 1, 1, 0],
+                [0, 0, 0, 0, 1, 1, 0],
+                [0, 0, 0, 1, 1, 1, 1]
+            ], //4
+            [
+                [1, 1, 1, 1, 1, 1, 1],
+                [1, 1, 0, 0, 0, 0, 0],
+                [1, 1, 0, 0, 0, 0, 0],
+                [1, 1, 1, 1, 1, 1, 0],
+                [0, 0, 0, 0, 0, 1, 1],
+                [0, 0, 0, 0, 0, 1, 1],
+                [0, 0, 0, 0, 0, 1, 1],
+                [0, 0, 0, 0, 0, 1, 1],
+                [1, 1, 0, 0, 0, 1, 1],
+                [0, 1, 1, 1, 1, 1, 0]
+            ], //5
+            [
+                [0, 0, 0, 0, 1, 1, 0],
+                [0, 0, 1, 1, 0, 0, 0],
+                [0, 1, 1, 0, 0, 0, 0],
+                [1, 1, 0, 0, 0, 0, 0],
+                [1, 1, 0, 1, 1, 1, 0],
+                [1, 1, 0, 0, 0, 1, 1],
+                [1, 1, 0, 0, 0, 1, 1],
+                [1, 1, 0, 0, 0, 1, 1],
+                [1, 1, 0, 0, 0, 1, 1],
+                [0, 1, 1, 1, 1, 1, 0]
+            ], //6
+            [
+                [1, 1, 1, 1, 1, 1, 1],
+                [1, 1, 0, 0, 0, 1, 1],
+                [0, 0, 0, 0, 1, 1, 0],
+                [0, 0, 0, 0, 1, 1, 0],
+                [0, 0, 0, 1, 1, 0, 0],
+                [0, 0, 0, 1, 1, 0, 0],
+                [0, 0, 1, 1, 0, 0, 0],
+                [0, 0, 1, 1, 0, 0, 0],
+                [0, 0, 1, 1, 0, 0, 0],
+                [0, 0, 1, 1, 0, 0, 0]
+            ], //7
+            [
+                [0, 1, 1, 1, 1, 1, 0],
+                [1, 1, 0, 0, 0, 1, 1],
+                [1, 1, 0, 0, 0, 1, 1],
+                [1, 1, 0, 0, 0, 1, 1],
+                [0, 1, 1, 1, 1, 1, 0],
+                [1, 1, 0, 0, 0, 1, 1],
+                [1, 1, 0, 0, 0, 1, 1],
+                [1, 1, 0, 0, 0, 1, 1],
+                [1, 1, 0, 0, 0, 1, 1],
+                [0, 1, 1, 1, 1, 1, 0]
+            ], //8
+            [
+                [0, 1, 1, 1, 1, 1, 0],
+                [1, 1, 0, 0, 0, 1, 1],
+                [1, 1, 0, 0, 0, 1, 1],
+                [1, 1, 0, 0, 0, 1, 1],
+                [0, 1, 1, 1, 0, 1, 1],
+                [0, 0, 0, 0, 0, 1, 1],
+                [0, 0, 0, 0, 0, 1, 1],
+                [0, 0, 0, 0, 1, 1, 0],
+                [0, 0, 0, 1, 1, 0, 0],
+                [0, 1, 1, 0, 0, 0, 0]
+            ], //9
+            [
+                [0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 1, 1, 1, 0, 0],
+                [0, 0, 1, 1, 1, 0, 0],
+                [0, 0, 1, 1, 1, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 1, 1, 1, 0, 0],
+                [0, 0, 1, 1, 1, 0, 0],
+                [0, 0, 1, 1, 1, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0]
+            ] //:
+        ];
+
+        var canvas = document.getElementById('canvas');
+
+        if (canvas.getContext) {
+            var cxt = canvas.getContext('2d');
+            //声明canvas的宽高
+            var H = 100,
+                W = 700;
+            canvas.height = H;
+            canvas.width = W;
+            cxt.fillStyle = '#f00';
+            cxt.fillRect(10, 10, 50, 50);
+
+            //存储时间数据
+            var data = [];
+            //存储运动的小球
+            var balls = [];
+            //设置粒子半径
+            var R = canvas.height / 20 - 1;
+            (function() {
+                var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+                //存储时间数字，由十位小时、个位小时、冒号、十位分钟、个位分钟、冒号、十位秒钟、个位秒钟这7个数字组成
+                data.push(temp[1], temp[2], 10, temp[3], temp[4], 10, temp[5], temp[6]);
+            })();
+
+            /*生成点阵数字*/
+            function renderDigit(index, num) {
+                for (var i = 0; i < digit[num].length; i++) {
+                    for (var j = 0; j < digit[num][i].length; j++) {
+                        if (digit[num][i][j] == 1) {
+                            cxt.beginPath();
+                            cxt.arc(14 * (R + 2) * index + j * 2 * (R + 1) + (R + 1), i * 2 * (R + 1) + (R + 1), R, 0, 2 * Math.PI);
+                            cxt.closePath();
+                            cxt.fill();
+                        }
+                    }
+                }
+            }
+
+            /*更新时钟*/
+            function updateDigitTime() {
+                var changeNumArray = [];
+                var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+                var NewData = [];
+                NewData.push(temp[1], temp[2], 10, temp[3], temp[4], 10, temp[5], temp[6]);
+                for (var i = data.length - 1; i >= 0; i--) {
+                    //时间发生变化
+                    if (NewData[i] !== data[i]) {
+                        //将变化的数字值和在data数组中的索引存储在changeNumArray数组中
+                        changeNumArray.push(i + '_' + (Number(data[i]) + 1) % 10);
+                    }
+                }
+                //增加小球
+                for (var i = 0; i < changeNumArray.length; i++) {
+                    addBalls.apply(this, changeNumArray[i].split('_'));
+                }
+                data = NewData.concat();
+            }
+
+            /*更新小球状态*/
+            function updateBalls() {
+                for (var i = 0; i < balls.length; i++) {
+                    balls[i].stepY += balls[i].disY;
+                    balls[i].x += balls[i].stepX;
+                    balls[i].y += balls[i].stepY;
+                    if (balls[i].x > W + R || balls[i].y > H + R) {
+                        balls.splice(i, 1);
+                        i--;
+                    }
+                }
+            }
+
+            /*增加要运动的小球*/
+            function addBalls(index, num) {
+                var numArray = [1, 2, 3];
+                var colorArray = ["#3BE", "#09C", "#A6C", "#93C", "#9C0", "#690", "#FB3", "#F80", "#F44", "#C00"];
+                for (var i = 0; i < digit[num].length; i++) {
+                    for (var j = 0; j < digit[num][i].length; j++) {
+                        if (digit[num][i][j] == 1) {
+                            var ball = {
+                                x: 14 * (R + 2) * index + j * 2 * (R + 1) + (R + 1),
+                                y: i * 2 * (R + 1) + (R + 1),
+                                stepX: Math.floor(Math.random() * 4 - 2),
+                                stepY: -2 * numArray[Math.floor(Math.random() * numArray.length)],
+                                color: colorArray[Math.floor(Math.random() * colorArray.length)],
+                                disY: 1
+                            };
+                            balls.push(ball);
+                        }
+                    }
+                }
+            }
+
+            /*渲染*/
+            function render() {
+                //重置画布宽度，达到清空画布的效果
+                canvas.height = 100;
+                //渲染时钟
+                for (var i = 0; i < data.length; i++) {
+                    renderDigit(i, data[i]);
+                }
+                //渲染小球
+                for (var i = 0; i < balls.length; i++) {
+                    cxt.beginPath();
+                    cxt.arc(balls[i].x, balls[i].y, R, 0, 2 * Math.PI);
+                    cxt.fillStyle = balls[i].color;
+                    cxt.closePath();
+                    cxt.fill();
+                }
+            }
+
+            clearInterval(oTimer);
+            var oTimer = setInterval(function() {
+                //更新时钟
+                updateDigitTime();
+                //更新小球状态
+                updateBalls();
+                //渲染
+                render();
+            }, 50);
+        }
+
+    })();
+</script>
+                </div> 
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <!-- 移动端将左侧栏放在页面顶部显示 -->
+<nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">专注小钱钱</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/image.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">专注小钱钱</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">变秃了也变强了</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:18120491@bjtu.edu.cn" title="Email"></a>
+                            
+                                <a class="fa github" target="_blank" href="https://github.com/z19960702" title="github"></a>
+                            
+                                <a class="fa bilibili" target="_blank" href="https://www.bilibili.com/" title="bilibili"></a>
+                            
+                                <a class="fa 知乎" target="_blank" href="/zhihu" title="知乎"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-STL容器总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <!-- 右上侧时间显示   -->
+  
+      <div class="article-meta">
+        <a href="/2020/08/11/STL%E5%AE%B9%E5%99%A8%E6%80%BB%E7%BB%93/" class="article-date">
+      <time datetime="2020-08-11T07:00:44.000Z" itemprop="datePublished">2020-08-11</time>
+</a>
+
+
+      </div>
+    
+    <!-- 文章内容 -->
+    <div class="article-inner">
+      
+        <input type="hidden" class="isFancy" />
+      
+      
+        <header class="article-header">
+          
+  
+    <h1 class="article-title" itemprop="name">
+      STL容器总结
+    </h1>
+  
+
+        </header>
+        
+        <div class="article-info article-info-post">
+          
+
+          <!-- 文章标签 -->
+
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
+    </div>
+
+          <div class="clearfix"></div>
+        </div>
+        
+      
+      <div class="article-entry" itemprop="articleBody">
+        
+            
+          <p>对c++中STL容器知识点进行汇总</p>
+<a id="more"></a>
+<p>STL拥有六大组件：<br>容器：各种数据结构，如vector、list、map等等<br>算法：各种常用的算法<br>迭代器：扮演容器与算法之间的胶合剂<br>仿函数：行为类似函数，可作为算法的某种策略<br>适配器：修饰容器、迭代器和仿函数<br>配置器：负责空间的配置和管理</p>
+<img src="/2020/08/11/STL%E5%AE%B9%E5%99%A8%E6%80%BB%E7%BB%93/%E5%85%AD%E5%A4%A7%E7%BB%84%E4%BB%B6%E7%9A%84%E5%85%B3%E7%B3%BB.png" class title="六大组件的关系">
+
+        
+      </div>
+      
+    </div>
+    
+      <!-- 文章末尾的版权声明框 -->
+
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2020/08/11/STL%E5%AE%B9%E5%99%A8%E6%80%BB%E7%BB%93/">STL容器总结</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">专注小钱钱</a></p>
+        <p><span>发布时间:</span>2020-08-11, 15:00:44</p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+<!-- 对文章上一篇和下一片进行导航 -->
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2020/08/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%88%86%E7%B1%BB%E7%AE%97%E6%B3%95/">
+                    机器学习分类算法
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2020/08/06/hexo-command/">
+                    hexo-command
+                </a>
+            </div>
+        
+    </nav>
+
+    
+  </article>
+  
+  <!-- 左边目录显示 -->
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+  
+  
+      <!-- 文章分享 -->
+<div class="share">
+    <!-- 通过百度分享工具 -->
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"STL容器总结　| 谈梦想　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+        <!-- 通过addthis工具分享 -->
+    
+</div>
+
+
+
+
+  
+  
+  
+    
+      <!--引入评论-->
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!--Valine 的核心代码库:-->
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<div id="comments"></div>
+    <script>
+        new Valine({
+            // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+            av: AV, 
+            el: '#comments', // 
+            app_id: 'xSC5Oq6Mm9skTJ9tawIP6Hhe-gzGzoHsz', // 这里填写上面得到的APP ID
+            app_key: 'yEJFXjoMoUan9lkvyxlio7zy', // 这里填写上面得到的APP KEY
+            placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!' // [v1.0.7 new]留言框占位提示文字
+        });
+    </script>
+    
+  
+  
+  <!-- 文章中左下角的导航栏 -->
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2020/08/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%88%86%E7%B1%BB%E7%AE%97%E6%B3%95/" title="上一篇: 机器学习分类算法">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2020/08/06/hexo-command/" title="下一篇: hexo-command">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/08/21/SMB%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/">SMB协议分析</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/08/21/Telnet%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/">Telnet协议分析</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/08/21/DNS%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/">DNS协议分析</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/08/13/%E6%9C%80%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/">最优化方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/08/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%88%86%E7%B1%BB%E7%AE%97%E6%B3%95/">机器学习分类算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/08/11/STL%E5%AE%B9%E5%99%A8%E6%80%BB%E7%BB%93/">STL容器总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/08/06/hexo-command/">hexo-command</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/08/06/Linux/">Linux 使用学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/17/%E5%9F%BA%E4%BA%8E%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F%E8%BF%9B%E8%A1%8C%E8%AF%84%E4%BC%B0/">基于神经网络的入侵检测系统进行评估</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86%E7%82%B9/">计算机网络知识点</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95/">计算机网络面试</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/25/c-detail/">c++ detail</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/30/sort/">十大排序算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/20/qml-url-question/">qml中文件保存的名称出错</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/16/Yilla-change/">开始对Hexo博客进行定制</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/16/my-first-blog/">学习创建博客</a></li></ul>
+
+
+  
+  
+      <script>
+          
+      </script>
+  
+  <!-- 右下角三个按钮 -->
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    
+        <a href="#comments"><i class="fa fa-comments-o"></i></a>
+     
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div></div>
+      <!-- 博客根部 -->
+<footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy;
+                2020
+                    专注小钱钱
+            </div>
+            <div class="footer-right">
+                <i class="fa fa-heart animated infinite pulse"></i> Study from <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a> Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a>
+            </div>
+        </div>
+        
+            <div class="visit">
+                <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                
+                    <span id="busuanzi_container_site_pv">
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                    </span>
+                    </span>
+                    
+                        
+                            <span>| </span>
+                            
+                                
+                                    <span id="busuanzi_container_page_pv">
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                                    </span>
+                                    </span>
+                                    
+            </div>
+            
+    </div>
+</footer>
+    </div>
+    
+    
+<script src="/js/GithubRepoWidget.js"></script>
+
+        
+            <script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+            <!-- 背景图片 -->
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({
+                    "background-color": bgColorList[bgColor],
+                    "background-size": "cover"
+                });
+            } else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({
+                    "background": backgroundimg,
+                    "background-attachment": "fixed",
+                    "background-size": "contain"
+                });
+            }
+        })
+    </script>
+    
+                
+                    
+                        <!-- 数学公式渲染器 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true, skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] } }); MathJax.Hub.Queue(function() { var all = MathJax.Hub.getAllJax(), i; for(i=0; i
+    < all.length; i +=1 ) { all[i].SourceElement().parentNode.className +=' has-jax' ; } }); </script>
+
+        <script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+                            
+                                
+                                    <script>
+    // Open in New Window
+    
+    var oOpenInNew = {
+        
+        github: ".github-widget a",
+        
+        
+        
+        
+        tags: ".article-tag a",
+        
+        
+        
+        
+        archives: ".archive-article-title",
+        
+        
+        miniArchives: "a.post-list-link",
+        
+        
+        
+        
+    }
+    for (var x in oOpenInNew) {
+        $(oOpenInNew[x]).attr("target", "_blank");
+    }
+    
+</script>
+  </div>
+</body>
+</html>
