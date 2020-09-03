@@ -179,7 +179,7 @@
     <div class="widget-wrap">
         <div id="myCanvasContainer" class="widget tagcloud">
             <canvas width="250" height="200" id="resCanvas" style="width:100%">
-          <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/QML/" style="font-size: 10px;">QML</a> <a href="/tags/blog/" style="font-size: 15px;">blog</a> <a href="/tags/c/" style="font-size: 10px;">c++</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/%E6%80%81%E5%8A%BF%E6%84%9F%E7%9F%A5/" style="font-size: 10px;">态势感知</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">机器学习</a> <a href="/tags/%E6%9D%82%E9%A1%B9/" style="font-size: 10px;">杂项</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/" style="font-size: 20px;">网络协议</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 15px;">面试</a>
+          <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/QML/" style="font-size: 10px;">QML</a> <a href="/tags/blog/" style="font-size: 15px;">blog</a> <a href="/tags/c/" style="font-size: 10px;">c++</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/%E6%80%81%E5%8A%BF%E6%84%9F%E7%9F%A5/" style="font-size: 10px;">态势感知</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">机器学习</a> <a href="/tags/%E6%9D%82%E9%A1%B9/" style="font-size: 15px;">杂项</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/" style="font-size: 20px;">网络协议</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 15px;">面试</a>
         </canvas>
         </div>
     </div>
@@ -523,6 +523,87 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
+  
+    <article id="a-基于神经网络的入侵检测系统进行评估" class="article article-type-a" itemscope itemprop="blogPost">
+  <!-- 右上侧时间显示   -->
+  
+      <div class="article-meta">
+        <a href="/2020/07/17/%E5%9F%BA%E4%BA%8E%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F%E8%BF%9B%E8%A1%8C%E8%AF%84%E4%BC%B0/" class="article-date">
+      <time datetime="2020-07-17T10:55:39.000Z" itemprop="datePublished">2020-07-17</time>
+</a>
+
+ 
+    <a href="/2020/07/17/%E5%9F%BA%E4%BA%8E%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F%E8%BF%9B%E8%A1%8C%E8%AF%84%E4%BC%B0/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+    </a>
+
+      </div>
+    
+    <!-- 文章内容 -->
+    <div class="article-inner">
+      
+        <input type="hidden" class="isFancy" />
+      
+      
+        <header class="article-header">
+          
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/17/%E5%9F%BA%E4%BA%8E%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F%E8%BF%9B%E8%A1%8C%E8%AF%84%E4%BC%B0/">基于神经网络的入侵检测系统进行评估</a>
+    </h1>
+  
+
+        </header>
+        
+      
+      <div class="article-entry" itemprop="articleBody">
+        
+            
+                <p>对“Evaluating Shallow and Deep Neural Networks for Network Intrusion Detection Systems in Cyber Security”论文进行分析</p>
+            
+        
+      </div>
+      
+      <div class="article-info article-info-index">
+        
+        
+
+        <!-- 文章标签 -->
+
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%80%81%E5%8A%BF%E6%84%9F%E7%9F%A5/" rel="tag">态势感知</a></li></ul>
+    </div>
+
+        
+          <p class="article-more-link">
+            <a href="/2020/07/17/%E5%9F%BA%E4%BA%8E%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F%E8%BF%9B%E8%A1%8C%E8%AF%84%E4%BC%B0/#more">more >></a>
+          </p>
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    </div>
+    
+  </article>
+  
+  <!-- 左边目录显示 -->
+
+  
+  
+  
+  
+  
+  <!-- 文章中左下角的导航栏 -->
+
+  
+  
+  <!-- 右下角三个按钮 -->
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+     
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
   
     <article id="a-计算机网络知识点" class="article article-type-a" itemscope itemprop="blogPost">
   <!-- 右上侧时间显示   -->
